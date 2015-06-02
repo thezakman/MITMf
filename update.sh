@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
+
 if [[ $EUID -ne 0 ]]; then
-  echo "You must root" 2>&1
+  echo "You must be root" 2>&1
   exit 1
 fi
 echo ""
@@ -16,7 +17,9 @@ echo -e "                               ";
 echo -e "  Framework for MITM attacks   ";
 echo -e ""
 echo -e "________________________________"
+
 git pull
+
 echo 'Updating the-backdoor-factory'
 cd libs/bdfactory/
 git pull origin master
